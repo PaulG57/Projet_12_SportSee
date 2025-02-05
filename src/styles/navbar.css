@@ -1,0 +1,16 @@
+.navbar {
+  height: 90px;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  width: 85%;
+  justify-content: space-around;
+  align-items: center;
+}
