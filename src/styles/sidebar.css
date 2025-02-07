@@ -12,7 +12,6 @@
   padding: 20px 0;
 }
 
-/* Conteneur des icônes */
 .sidebar ul {
   list-style: none;
   padding: 0;
@@ -23,14 +22,12 @@
   justify-content: center;
 }
 
-/* Icônes */
 .sidebar ul li {
   margin: 20px 0;
   text-align: center;
   font-size: 24px;
 }
 
-/* Texte en bas */
 .sidebar p {
   transform: rotate(-90deg); 
   white-space: nowrap;
