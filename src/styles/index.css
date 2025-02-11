@@ -24,3 +24,22 @@
     width: 90%;
     height: 90%;
 }
+
+.user-name {
+    font-weight: bold;
+    color: red;
+}
+
+.bar-chart-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bar-chart-title div {
+    display: flex;
+}
+
+.activity-chart {
+    padding: 20px;
+    background-color: #FBFBFB;
+}
