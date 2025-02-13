@@ -1,0 +1,21 @@
+.bar-chart-title {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px 30px 20px;
+    font-size: 0.7rem;
+}
+
+.bar-chart-title div {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.activity-chart {
+    padding: 20px;
+    background-color: #FBFBFB;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
+}
