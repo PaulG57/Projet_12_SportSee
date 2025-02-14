@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getUserData } from "../services/data";
 import ActivityChart from "./ActivityChart";
 import AverageSessionsChart from "./AverageSessionsChart";
+import RadarGraph from "./PerformanceChart";
 
 const Profile = () => {
   const [user, setUser] = useState(null);
@@ -14,12 +15,23 @@ const Profile = () => {
       fetchData();
   }, []);
 
+  if (!user) return <div>❌ Une erreur est survenue</div>;
+
   return (
       <div className="profile">
-          {user && <h1>Bonjour <span className="user-name">{user.firstName}</span></h1>}
-          <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-          {user && <ActivityChart data={user.activity} />}
-          {user && <AverageSessionsChart data={user.averageSessions} />}
+          <div className="profile-header">
+              <h1>Bonjour <span className="user-name">{user.firstName}</span></h1>
+              <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+          </div>
+
+          <div className="profile-charts">
+              <ActivityChart data={user.activity} />
+
+              <div className="small-charts">
+                  <AverageSessionsChart data={user.averageSessions} />
+                  <RadarGraph data={user.performance} />
+              </div>
+          </div>
       </div>
   );
 };
