@@ -4,7 +4,7 @@ class UserDataModel {
         this.firstName = user.userInfos.firstName;
         this.lastName = user.userInfos.lastName;
         this.age = user.userInfos.age;
-        this.score = user.todayScore ? user.todayScore : user.score;
+        this.score = (user.todayScore ? user.todayScore : user.score) * 100;
         this.keyData = user.keyData;
 
         this.activity = activity.sessions;

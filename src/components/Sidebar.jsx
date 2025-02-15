@@ -7,7 +7,7 @@ function Sidebar() {
           <li>🧘‍♂️</li>
           <li>🏊‍♂️</li>
         </ul>
-        <p>Copyright SportSee</p>
+        <p>Copyright SportSee 2025</p>
       </aside>
     );
   }

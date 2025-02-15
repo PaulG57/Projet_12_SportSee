@@ -3,13 +3,14 @@ import { getUserData } from "../services/data";
 import ActivityChart from "./ActivityChart";
 import AverageSessionsChart from "./AverageSessionsChart";
 import RadarGraph from "./PerformanceChart";
+import ScoreChart from "./ScoreChart";
 
 const Profile = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
       const fetchData = async () => {
-          const data = await getUserData(18);
+          const data = await getUserData(12);
           setUser(data);
       };
       fetchData();
@@ -30,6 +31,7 @@ const Profile = () => {
               <div className="small-charts">
                   <AverageSessionsChart data={user.averageSessions} />
                   <RadarGraph data={user.performance} />
+                  <ScoreChart score={user.score} />
               </div>
           </div>
       </div>
