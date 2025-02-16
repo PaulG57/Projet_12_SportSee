@@ -1,5 +1,5 @@
 .sidebar {
-  width: 80px;
+  width: 117px;
   height: 100%;
   background-color: black;
   color: white;
@@ -30,4 +30,5 @@
   margin-bottom: 50px;
   position: relative;
   bottom: 20px;
+  font-size: 12px;
 }
