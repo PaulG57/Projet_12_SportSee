@@ -33,7 +33,7 @@ const ActivityChart = ({ data }) => {
                     <YAxis yAxisId="left" orientation="left" dataKey="calories" hide />
                     <Tooltip 
                     labelFormatter={() => ''} 
-                    contentStyle={{ backgroundColor: "#E60000"}}
+                    contentStyle={{ backgroundColor: "#E60000", lineHeight: 2.5, padding: 5, fontSize: 12 }}
                     itemStyle={{ color: "white" }}
                     formatter={(value, name) => [`${value} ${name === "kilogram" ? "kg" : "kCal"}`]}
                     />

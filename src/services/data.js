@@ -1,7 +1,7 @@
 import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from "./mockData";
 import UserDataModel from "./UserDataModel";
 
-const USE_API = false;
+const USE_API = true;
 const BASE_URL = "http://localhost:3000/user";
 
 // Fonction pour récupérer une donnée depuis l'API

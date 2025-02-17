@@ -29,18 +29,18 @@
 .profile {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 60px;
     padding: 20px;
 }
 
 .profile-header {
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 .profile-header h1 {
     font-size: 42px;
-    margin-bottom: 25px;
 }
 
 .user-name {
@@ -69,5 +69,5 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
 }
