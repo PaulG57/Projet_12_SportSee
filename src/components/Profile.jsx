@@ -4,6 +4,7 @@ import ActivityChart from "./ActivityChart";
 import AverageSessionsChart from "./AverageSessionsChart";
 import RadarGraph from "./PerformanceChart";
 import ScoreChart from "./ScoreChart";
+import KeyDataSection from "./KeyDataSection";
 
 const Profile = () => {
   const [user, setUser] = useState(null);
@@ -19,22 +20,24 @@ const Profile = () => {
   if (!user) return <div>❌ Une erreur est survenue</div>;
 
   return (
-      <div className="profile">
-          <div className="profile-header">
-              <h1>Bonjour <span className="user-name">{user.firstName}</span></h1>
-              <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-          </div>
-
-          <div className="profile-charts">
-              <ActivityChart data={user.activity} />
-
-              <div className="small-charts">
-                  <AverageSessionsChart data={user.averageSessions} />
-                  <RadarGraph data={user.performance} />
-                  <ScoreChart score={user.score} />
-              </div>
-          </div>
+    <div className="profile">
+      <div className="profile-header">
+        <h1>Bonjour <span className="user-name">{user.firstName}</span></h1>
+        <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       </div>
+  
+      <div className="profile-content">
+        <div className="charts-container">
+          <ActivityChart data={user.activity} />
+          <div className="small-charts">
+            <AverageSessionsChart data={user.averageSessions} />
+            <RadarGraph data={user.performance} />
+            <ScoreChart score={user.score} />
+          </div>
+        </div>
+        <KeyDataSection keyData={user.keyData} />
+      </div>
+    </div>
   );
 };
 

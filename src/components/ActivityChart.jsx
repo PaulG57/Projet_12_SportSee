@@ -11,7 +11,7 @@ const ActivityChart = ({ data }) => {
                     <h2> 🔴 Calories brûlées (kCal)</h2>
                 </div>
             </div>
-            <ResponsiveContainer width="100%" height={300}>
+            <ResponsiveContainer width="100%" height="65%">
                 <BarChart data={data} barGap={10} barSize={10}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false} />
                     <XAxis 

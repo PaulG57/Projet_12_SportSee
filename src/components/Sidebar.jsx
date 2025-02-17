@@ -2,6 +2,7 @@ import icon1 from "../assets/icon_1.png";
 import icon2 from "../assets/icon_2.png";
 import icon3 from "../assets/icon_3.png";
 import icon4 from "../assets/icon_4.png";
+import "../styles/sidebar.css";
 
 function Sidebar() {
     return (

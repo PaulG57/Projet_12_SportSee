@@ -4,7 +4,7 @@
   color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: end;
 }
 
 .navbar-menu {
@@ -13,4 +13,13 @@
   width: 85%;
   justify-content: space-around;
   align-items: center;
+  font-weight: bold;
+}
+
+.navbar-logo {
+  height: 60px;
+}
+
+.navbar-logo img {
+  height: 100%;
 }
