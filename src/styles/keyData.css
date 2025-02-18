@@ -7,7 +7,7 @@
     background: #FBFBFB;
     padding: 25px;
     border-radius: 10px;
-    width: 250px;
+    width: 100%;
   }
   
   .key-data-icon {
@@ -31,5 +31,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 28%;
   }
   

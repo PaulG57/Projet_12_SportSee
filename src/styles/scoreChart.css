@@ -1,7 +1,7 @@
 .score-container {
     position: relative;
     width: 33%;
-    height: 263px;
+    height: 100%;
     background: #FBFBFB;
     border-radius: 10px;
     display: flex;
@@ -11,8 +11,8 @@
 
 .score-title {
     position: absolute;
-    top: 30px;
-    left: 35px;
+    top: 7%;
+    left: 8%;
     font-size: 14px;
     opacity: 0.7;
 }
