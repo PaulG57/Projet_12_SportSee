@@ -4,18 +4,29 @@ import UserDataModel from "./UserDataModel";
 const USE_API = true;
 const BASE_URL = "http://localhost:3000/user";
 
-// Fonction pour récupérer une donnée depuis l'API
+/**
+ * Récupère une donnée depuis l'API.
+ * @param {string} url - URL de l'API à interroger.
+ * @returns {Promise<Object>} - Données récupérées depuis l'API.
+ */
 const fetchData = async (url) => {
     try {
         const response = await fetch(url);
         const data = await response.json();
         return data.data;
     } catch (error) {
-        console.error(error);
+        console.error("Erreur lors de la récupération des données :", error);
     }
 };
 
-// Récupère toutes les données de l'utilisateur et les formate avec `UserDataModel`
+/**
+ * Récupère toutes les données de l'utilisateur (profil, activité, sessions, performance).
+ * Si l'API est activée (`USE_API = true`), les données sont récupérées depuis l'API.
+ * Sinon, elles sont chargées depuis les mocks (`mockData.js`).
+ *
+ * @param {number} userId - ID de l'utilisateur.
+ * @returns {Promise<UserDataModel>} - Objet formaté contenant toutes les données utilisateur.
+ */
 export const getUserData = async (userId) => {
     if (USE_API) {
         try {
@@ -27,7 +38,7 @@ export const getUserData = async (userId) => {
             ]);
             return new UserDataModel(user, activity, averageSessions, performance);
         } catch (error) {
-            console.error(error);
+            console.error("Erreur lors de la récupération des données utilisateur :", error);
         }
     }
 

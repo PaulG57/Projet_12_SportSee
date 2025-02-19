@@ -1,7 +1,6 @@
 .chart-container {
     position: relative;
     width: 33%;
-    height: 100%;
     background: #ff0000e9;
     border-radius: 10px;
     overflow: hidden;
