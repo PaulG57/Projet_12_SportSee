@@ -19,24 +19,31 @@ const AverageSessionsChart = ({ data }) => {
 
             <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={data}>
-                    <YAxis hide domain={['dataMin - 10', 'dataMax + 20']} />
+                    <YAxis hide domain={['dataMin - 20', 'dataMax + 50']} />
                     <XAxis 
                         dataKey="day" 
                         tickFormatter={(day) => days[day - 1]} 
                         tick={{ fill: "rgba(255, 255, 255, 0.7)" }} 
                         tickLine={false} 
                         axisLine={false}
-                        padding={{ left: 20, right: 20 }}
+                        padding={{ left: 10, right: 10 }}
                     />
                     <Tooltip cursor={false} content={<CustomTooltip />} />
                     <Line 
-                        type="monotone" 
+                        type="natural" 
                         dataKey="sessionLength" 
-                        stroke="rgba(255, 255, 255, 0.7)" 
+                        stroke="url(#gradient)" 
                         strokeWidth={2} 
                         dot={false} 
                         activeDot={{ r: 4, fill: "#FFFFFF", stroke: "white", strokeWidth: 3 }} 
                     />
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="rgba(255,255,255,0.5)" />
+                        <stop offset="60%" stopColor="rgba(255,255,255,0.7)" />
+                        <stop offset="100%" stopColor="rgba(255,255,255,1)" />
+                        </linearGradient>
+                    </defs>
                 </LineChart>
             </ResponsiveContainer>
         </div>
