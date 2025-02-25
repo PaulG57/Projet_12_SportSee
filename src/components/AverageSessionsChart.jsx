@@ -1,5 +1,6 @@
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { useState } from "react";
+import PropTypes from "prop-types";
 import "../styles/averageSessions.css";
 
 const CustomTooltip = ({ payload }) => 
@@ -48,6 +49,10 @@ const AverageSessionsChart = ({ data }) => {
             </ResponsiveContainer>
         </div>
     );
+};
+
+AverageSessionsChart.propTypes = {
+    data: PropTypes.array.isRequired,
 };
 
 export default AverageSessionsChart;

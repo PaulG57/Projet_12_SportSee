@@ -3,6 +3,7 @@ import calorieIcon from "../assets/calories-icon.png";
 import proteinIcon from "../assets/protein-icon.png";
 import carbIcon from "../assets/carbs-icon.png";
 import lipidIcon from "../assets/fat-icon.png";
+import PropTypes from "prop-types";
 import "../styles/keyData.css";
 
 const KeyDataSection = ({ keyData }) => {
@@ -14,6 +15,10 @@ const KeyDataSection = ({ keyData }) => {
       <KeyDataCard icon={lipidIcon} value={keyData.lipidCount} unit="g" label="Lipides" />
     </div>
   );
+};
+
+KeyDataSection.propTypes = {
+  keyData: PropTypes.object.isRequired,
 };
 
 export default KeyDataSection;

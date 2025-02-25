@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "../styles/selectUser.css";
 
-const SelectionUtilisateur = () => {
+const SelectUser = () => {
     const navigate = useNavigate();
 
     return (
@@ -15,4 +15,4 @@ const SelectionUtilisateur = () => {
     );
 };
 
-export default SelectionUtilisateur;
+export default SelectUser;

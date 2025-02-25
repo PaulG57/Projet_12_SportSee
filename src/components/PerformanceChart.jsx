@@ -1,4 +1,5 @@
 import { RadarChart, PolarGrid, PolarAngleAxis, Radar, ResponsiveContainer } from "recharts";
+import PropTypes from "prop-types";
 import "../styles/performance.css";
 
 const RadarGraph = ({ data }) => {
@@ -13,6 +14,13 @@ const RadarGraph = ({ data }) => {
             </ResponsiveContainer>
         </div>
     );
+};
+
+RadarGraph.propTypes = {
+    data: PropTypes.arrayOf(PropTypes.shape({
+        kind: PropTypes.string.isRequired,
+        value: PropTypes.number.isRequired,
+    })).isRequired,
 };
 
 export default RadarGraph;

@@ -1,5 +1,6 @@
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
 import "../styles/activity.css";
+import PropTypes from "prop-types";
 
 const ActivityChart = ({ data }) => {
     return (
@@ -43,6 +44,10 @@ const ActivityChart = ({ data }) => {
             </ResponsiveContainer>
         </div>
     );
+};
+
+ActivityChart.propTypes = {
+    data: PropTypes.array.isRequired,
 };
 
 export default ActivityChart;

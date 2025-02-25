@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import "../styles/keyData.css";
 
 const KeyDataCard = ({ icon, value, unit, label }) => {
@@ -10,6 +11,13 @@ const KeyDataCard = ({ icon, value, unit, label }) => {
       </div>
     </div>
   );
+};
+
+KeyDataCard.propTypes = {
+  icon: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
+  unit: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
 };
 
 export default KeyDataCard;

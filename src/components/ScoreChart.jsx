@@ -1,4 +1,5 @@
 import { RadialBarChart, RadialBar } from "recharts";
+import PropTypes from "prop-types";
 import "../styles/scoreChart.css";
 
 const ScoreChart = ({ score }) => (
@@ -19,5 +20,9 @@ const ScoreChart = ({ score }) => (
     </div>
   </div>
 );
+
+ScoreChart.propTypes = {
+  score: PropTypes.number.isRequired,
+};
 
 export default ScoreChart;

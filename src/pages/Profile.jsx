@@ -7,6 +7,7 @@ import RadarGraph from "../components/PerformanceChart";
 import ScoreChart from "../components/ScoreChart";
 import KeyDataSection from "../components/KeyDataSection";
 import Erreur from "../components/Error";
+import PropTypes from "prop-types";
 
 const Profile = () => {
   const { id } = useParams();
@@ -48,6 +49,11 @@ const Profile = () => {
       </div>
     </div>
   );
+};
+
+Profile.propTypes = {
+  id: PropTypes.string,
+  user: PropTypes.object,
 };
 
 export default Profile;
