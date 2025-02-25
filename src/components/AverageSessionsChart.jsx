@@ -17,7 +17,7 @@ const AverageSessionsChart = ({ data }) => {
             <div className="chart-title">Durée moyenne des sessions</div>
             <div className="chart-overlay" style={{ left, right: 0 }} />
 
-            <ResponsiveContainer width="100%" height="100%">
+            <ResponsiveContainer>
                 <LineChart data={data}>
                     <YAxis hide domain={['dataMin - 20', 'dataMax + 50']} />
                     <XAxis 

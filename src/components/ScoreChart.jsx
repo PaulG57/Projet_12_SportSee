@@ -11,7 +11,7 @@ const ScoreChart = ({ score }) => (
       startAngle={90} endAngle={90 + (score * 3.6)}
       barSize={10} data={[{ value: score }]}
     >
-      <RadialBar dataKey="value" fill="red" clockWise cornerIsExternal cornerRadius={10} />
+      <RadialBar dataKey="value" fill="red" cornerIsExternal cornerRadius={10} />
     </RadialBarChart>
     <div className="score-text">
       <p className="score-value">{score}%</p>

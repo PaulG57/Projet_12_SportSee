@@ -1,23 +1,32 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { getUserData } from "../services/data";
-import ActivityChart from "./ActivityChart";
-import AverageSessionsChart from "./AverageSessionsChart";
-import RadarGraph from "./PerformanceChart";
-import ScoreChart from "./ScoreChart";
-import KeyDataSection from "./KeyDataSection";
+import ActivityChart from "../components/ActivityChart";
+import AverageSessionsChart from "../components/AverageSessionsChart";
+import RadarGraph from "../components/PerformanceChart";
+import ScoreChart from "../components/ScoreChart";
+import KeyDataSection from "../components/KeyDataSection";
+import Erreur from "../components/Error";
 
 const Profile = () => {
+  const { id } = useParams();
   const [user, setUser] = useState(null);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
       const fetchData = async () => {
-          const data = await getUserData(12);
-          setUser(data);
+          const data = await getUserData(id);
+          if (!data) {
+              setError(true);
+          } else {
+              setUser(data);
+          }
       };
       fetchData();
-  }, []);
+  }, [id]);
 
-  if (!user) return <div>❌ Une erreur est survenue</div>;
+  if (error) return <Erreur />;
+  if (!user) return <div>Chargement...</div>;
 
   return (
     <div className="profile">

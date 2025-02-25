@@ -1,0 +1,16 @@
+.selection-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 40%
+}
+
+.selection-container h1 {
+    margin-bottom: 20px;
+}
+
+.user-buttons {
+    display: flex;
+    gap: 20px;
+}

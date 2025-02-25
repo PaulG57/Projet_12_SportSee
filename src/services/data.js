@@ -14,8 +14,8 @@ const fetchData = async (url) => {
         const response = await fetch(url);
         const data = await response.json();
         return data.data;
-    } catch (error) {
-        console.error("Erreur lors de la récupération des données :", error);
+    } catch {
+        return null;
     }
 };
 
@@ -37,15 +37,15 @@ export const getUserData = async (userId) => {
                 fetchData(`${BASE_URL}/${userId}/performance`)
             ]);
             return new UserDataModel(user, activity, averageSessions, performance);
-        } catch (error) {
-            console.error("Erreur lors de la récupération des données utilisateur :", error);
+        } catch {
+            return null;
         }
+    } else {
+        // Mode Mock : récupère et formate les données locales
+        const user = USER_MAIN_DATA.find(user => user.id === userId);
+        const activity = USER_ACTIVITY.find(act => act.userId === userId);
+        const averageSessions = USER_AVERAGE_SESSIONS.find(sess => sess.userId === userId);
+        const performance = USER_PERFORMANCE.find(perf => perf.userId === userId);
+        return new UserDataModel(user, activity, averageSessions, performance);
     }
-
-    // Mode Mock : récupère et formate les données locales
-    const user = USER_MAIN_DATA.find(user => user.id === userId);
-    const activity = USER_ACTIVITY.find(act => act.userId === userId);
-    const averageSessions = USER_AVERAGE_SESSIONS.find(sess => sess.userId === userId);
-    const performance = USER_PERFORMANCE.find(perf => perf.userId === userId);
-    return new UserDataModel(user, activity, averageSessions, performance);
 };
