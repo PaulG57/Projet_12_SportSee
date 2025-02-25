@@ -7,12 +7,18 @@ import PropTypes from "prop-types";
 import "../styles/keyData.css";
 
 const KeyDataSection = ({ keyData }) => {
+  const keyDataArray = [
+    { icon: calorieIcon, value: keyData.calorieCount, unit: "kCal", label: "Calories" },
+    { icon: proteinIcon, value: keyData.proteinCount, unit: "g", label: "Protéines" },
+    { icon: carbIcon, value: keyData.carbohydrateCount, unit: "g", label: "Glucides" },
+    { icon: lipidIcon, value: keyData.lipidCount, unit: "g", label: "Lipides" }
+  ];
+  
   return (
     <div className="key-data-section">
-      <KeyDataCard icon={calorieIcon} value={keyData.calorieCount} unit="kCal" label="Calories" />
-      <KeyDataCard icon={proteinIcon} value={keyData.proteinCount} unit="g" label="Protéines" />
-      <KeyDataCard icon={carbIcon} value={keyData.carbohydrateCount} unit="g" label="Glucides" />
-      <KeyDataCard icon={lipidIcon} value={keyData.lipidCount} unit="g" label="Lipides" />
+      {keyDataArray.map((item, index) => (
+        <KeyDataCard key={index} icon={item.icon} value={item.value} unit={item.unit} label={item.label} />
+      ))}
     </div>
   );
 };
